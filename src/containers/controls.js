@@ -6,16 +6,18 @@ import { connect } from 'react-redux'
 
 import '../css/gameInfo.css'
 
-class GameInfo extends Component {
+class Controls extends Component {
 
+  function handleKeyPress(e){
+    console.log('keypress: ', e.key);
+    //this.setState =
+
+  }
 
   render(){
     return(
       <div>
-        <p>wordToGuess:</p> <h4>{this.props.gameinfo.wordToGuess}</h4>
-        <p>isEverythingGuessed: {this.props.gameinfo.isEverythingGuessed}</p>
-        <p>guesses: {this.props.gameinfo.guesses}</p>
-        <p>badGuesses: {this.props.gameinfo.badGuesses}</p>
+
       </div>
     )
 
@@ -29,4 +31,4 @@ function mapStateToProps(state){
   };
 }
 
-export default connect(mapStateToProps)(GameInfo);
+export default connect(mapStateToProps)(Controls);

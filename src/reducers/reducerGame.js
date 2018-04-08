@@ -1,18 +1,11 @@
-// export default function (){
-//   return
-//     {
-//       displayWord: "chicken",
-//       isEverythingGuessed: false,
-//       guesses: 0,
-//       badGuesses: 0
-//     }
-//
-//
-// }
+
+import {wordToGuess,hangmanArray,displayShow} from '../lib/game2'
+const chosenWord = wordToGuess;
+let dashes = displayShow;
 
 const initialState = {
-  displayWord: "",
-  wordToGuess: "",
+  displayWord: dashes,
+  wordToGuess: chosenWord,
   isEverythingGuessed: false,
   guesses: 0,
   badGuesses: 0

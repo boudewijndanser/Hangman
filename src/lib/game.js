@@ -1,4 +1,5 @@
-
+///////////////// GAME.js
+// original file from working separate .js / node game.
 // setup an array with words
 export let badGuesses = 0;
 export let guesses = 0;
@@ -9,7 +10,7 @@ export let vocabulary = createVocabulary(); //get  vocabulary array
 export let wordToGuess = pickWord(vocabulary); //get the word
 export let hangmanArray = getHangmanInfo(wordToGuess); //transform word into array with some extra data
 export let bodyParts = ["","foundation","pole up","hangbar","crossbar","rope","tie the noose","Step on up","insert head","hang out..." ];
-//start gameloop
+
 
 function createVocabulary(){
   return ["wolverine","thanos","drstrange","groot","rocket","antman","ironman","thor","spiderman"];
@@ -38,23 +39,27 @@ function getHangmanInfo(wordToGuess){
   //use map on array to create letters + guessed
   let hangmanInfo = wordToGuess.split("").map(x => [x,0]);
   //return mapped stuff
-  //console.log('hangmanInfo: ', hangmanInfo);
+  console.log('---> hangmanInfo: ', hangmanInfo);
   return hangmanInfo;
 }
 
 function checkGuess(lastGuess, hangmanArray){
+  console.log('---> hangmanArray in checkGuess: ', hangmanArray);
   hangmanArray.filter(function(info) {
       if(lastGuess.indexOf(info[0]) > -1) {
         info[1] = 1;
       }
+      console.log('hangmanArray: ', hangmanArray);
       return hangmanArray;
     })
-    //console.log('hangmanArray: ', hangmanArray);
+
 
 
 }
 function wasGuessBad(hangmanArray, lastGuess){
   var bad = 1;
+  console.log('---> lastGuess in wasGuessBad: ', lastGuess);
+  console.log('---> hangmanArray in wasGuessBad: ', hangmanArray);
   hangmanArray.filter(function(info) {
       if(lastGuess.indexOf(info[0]) > -1) {
         //console.log('1 goodGuess')
@@ -71,6 +76,7 @@ function tooManybadGuesses(badGuesses){
 }
 
 function gameNotOver(hangmanArray, badGuesses){
+  console.log('---> hangmanArray in gameNotOver: ', hangmanArray);
   if (tooManybadGuesses(badGuesses)) {
     return false;
   }
@@ -99,6 +105,7 @@ function isEverythingGuessed(hangmanArray){
 
 function getDisplayWord(hangmanArray){
   // Which letters are guessed?
+  console.log('---> hangmanArray in getDisplayWord: ', hangmanArray);
   function getDisplayReducer(accumulator, info) {
     let letter = "";
     if(info[1]===0){
@@ -114,6 +121,7 @@ function getDisplayWord(hangmanArray){
 }
 
 function showOutput(hangmanArray, guess, guesses, badGuesses){
+  console.log('---> hangmanArray in showOutput: ', hangmanArray);
   console.log("guesses: " + guesses);
   console.log("badGuesses: " + badGuesses);
   //console.log("guess: ", guess);
