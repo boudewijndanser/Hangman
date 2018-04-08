@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import GameInfo from './containers/gameInfo'
+import DisplayWord from './containers/displayWord'
 import './css/App.css';
 
-class App extends Component {
-  render() {
-    return (
+const App = () => (
       <div className="App">
-          <h1 className="title">Hangman!</h1>
+        <h1 className="title">Hangman!</h1>
+        <br />
+        <br />
+        <DisplayWord />
+        <br />
+        <br />
+        <GameInfo />
+
       </div>
-    );
-  }
-}
+);
+
+
 
 export default App;

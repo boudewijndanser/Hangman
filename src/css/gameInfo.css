@@ -4,6 +4,12 @@
 /* font-family: 'Open Sans', sans-serif;
 font-family: 'Alfa Slab One', cursive; */
 
+body {
+  /* margin: 20px; */
+  /* padding: 20px; */
+  /* max-width: 480px; */
+
+}
 
 h1.title {
   font-family: 'Alfa Slab One', cursive;
@@ -12,12 +18,12 @@ h1.title {
   margin: 0px;
 }
 
-/* h4 {
+h4 {
   font-family: 'Alfa Slab One', cursive;
   font-size: 20px;
-  color: rgb(118, 207, 193);
+  color: rgb(199, 233, 220);
   margin: 0px;
-} */
+}
 
 p {
   font-family: 'Open Sans', sans-serif;
