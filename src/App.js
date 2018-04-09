@@ -1,6 +1,7 @@
 import React from 'react';
 import GameInfo from './containers/gameInfo'
 import DisplayWord from './containers/displayWord'
+import Controls from './containers/controls'
 import './css/App.css';
 
 const App = () => (
@@ -10,6 +11,7 @@ const App = () => (
         <br />
         <DisplayWord />
         <br />
+        <Controls />
         <br />
         <GameInfo />
 

@@ -2,7 +2,7 @@
 // setup an array with words
 export let badGuesses = 0;
 export let guesses = 0;
-export let guess = [];
+export let guess = "";
 
 //prep the shit
 export let vocabulary = createVocabulary(); //get  vocabulary array

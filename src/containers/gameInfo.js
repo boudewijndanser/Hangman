@@ -16,6 +16,7 @@ class GameInfo extends Component {
         <p>isEverythingGuessed: {this.props.gameinfo.isEverythingGuessed}</p>
         <p>guesses: {this.props.gameinfo.guesses}</p>
         <p>badGuesses: {this.props.gameinfo.badGuesses}</p>
+        <p>guessedLetter: {this.props.gameinfo.guessedLetter}</p>
       </div>
     )
 

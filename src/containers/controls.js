@@ -2,27 +2,48 @@
 import React, { Component } from 'react'
 // import React from 'react'
 //import PropTypes from 'prop-types'
+import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux'
-
+import { PassTheLetter } from '../actions/index'
 import '../css/gameInfo.css'
+import { GUESSING_LETTER } from '../actions/types'
+//import { LetterButton } from '../components/letterButton'
 
-class Controls extends Component {
+const A = 65 // ASCII character code
 
-  function handleKeyPress(e){
-    console.log('keypress: ', e.key);
-    //this.setState =
-
+class Controls extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      justClicked: null,
+      letters: Array.from({length: 26}, (_, i) => String.fromCharCode(A + i))
+    };
   }
 
-  render(){
-    return(
-      <div>
+  handleClick(e) {
+      var sending = e.target.dataset.letter;
+      this.props.dispatch(PassTheLetter(sending))
 
+    this.setState({
+      justClicked: e.target.dataset.letter
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        Just clicked: {this.state.justClicked}
+        <ul>
+          {this.state.letters.map(letter =>
+            <li key={letter} data-letter={letter} onClick={this.handleClick}>
+              {letter}
+            </li>
+          )}
+        </ul>
       </div>
     )
-
   }
-
 }
 
 function mapStateToProps(state){

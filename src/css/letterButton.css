@@ -1,0 +1,23 @@
+/* client/src/components/BuyProductButton.css */
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Open+Sans');
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Alfa Slab One', cursive; */
+button.BuyProduct {
+  flex: 1;
+  /* border: 1px solid #ccc; */
+  font-size: 20px;
+  margin: 12px;
+  cursor: pointer;
+  /* max-width: 50px; */
+  background-color: rgb(93, 221, 155);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Alfa Slab One', cursive;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+button.BuyProduct:hover {
+  background-color: rgb(25, 140, 95);
+}

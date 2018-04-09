@@ -20,7 +20,7 @@ function pickWord(vocabulary){
   //return 'thor';
   return vocabulary[Math.floor(Math.random() * vocabulary.length)];
 }
-//shamefully copied from SE
+//shamefully copied from SO
 function sleep(ms) {
     var unixtime_ms = new Date().getTime();
     while(new Date().getTime() < unixtime_ms + ms) {}
